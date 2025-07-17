@@ -1,0 +1,245 @@
+/* Start Variables */
+:root {
+  --main-color: #2196f3;
+}
+/* End Variables */
+/* Start Global Rules */
+* {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Cairo", sans-serif;
+}
+
+.container {
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* Small */
+@media (min-width: 768px) {
+  .container {
+    width: 750px;
+  }
+}
+/* Medium */
+@media (min-width: 992px) {
+  .container {
+    width: 970px;
+  }
+}
+/* Large */
+@media (min-width: 1200px) {
+  .container {
+    width: 1170px;
+  }
+}
+
+/* End Global Rules */
+/* Start Components */
+/* End Components */
+
+/* Start Header */
+header {
+  background-color: #ffffff;
+  border-bottom: 1px solid black;
+}
+
+header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  position: relative;
+}
+
+header .container .big-box {
+  background-color: white;
+  top: 73px;
+  left: 0;
+  position: absolute;
+  display: flex;
+  z-index: -1;
+  opacity: 0;
+  width: 100%;
+  padding: 20px;
+  border-bottom: 5px var(--main-color) solid;
+  transition: 0.3s;
+}
+
+@media (max-width: 991px) {
+  header .container .big-box img {
+    display: none;
+  }
+}
+
+header .container .big-box .box-links {
+  display: flex;
+}
+
+header .container .big-box .box-links ul {
+  margin-left: 40px;
+}
+
+header .container .big-box .box-links ul li {
+  padding: 15px 40px;
+  border-bottom: 1px rgba(0, 0, 0, 0.151) solid;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+header .container .big-box .box-links ul li a {
+  color: var(--main-color);
+  font-weight: bold;
+}
+
+header .container > a {
+  color: var(--main-color);
+  font-size: 26px;
+  font-weight: bold;
+  height: 72px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media (max-width: 767px) {
+  header .container > a {
+    width: 100%;
+    height: 50px;
+  }
+}
+
+header .container .links {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+header .container .links > ul {
+  display: flex;
+}
+
+header .container .links > ul > li > a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 30px;
+  height: 72px;
+  font-size: 18px;
+  color: black;
+  transition: 0.3s;
+  position: relative;
+  overflow: hidden;
+}
+
+@media (max-width: 767px) {
+  header .container .links > ul > li > a {
+    padding: 10px;
+  }
+}
+
+header .container .links > ul > li > a.others:hover + .big-box {
+  z-index: 1;
+  opacity: 100%;
+}
+
+header .container > .links > ul > li > a::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  background-color: var(--main-color);
+  height: 5px;
+  top: 0;
+  right: -100%;
+  transition: 0.3s;
+}
+
+header .container > .links > ul > li > a:hover {
+  color: var(--main-color);
+  background-color: #fafafa;
+}
+header .container .links ul li a:hover::before {
+  right: 0;
+}
+/* End header */
+/* Start Landing */
+.landing {
+  background-color: #ececec;
+  position: relative;
+}
+
+.landing .container {
+  display: flex;
+}
+
+.landing .container .text {
+  display: flex;
+  line-height: 1.5;
+  align-items: center;
+  align-content: center;
+  flex-wrap: wrap;
+}
+
+.landing .container .text h1 {
+  margin: 0;
+  font-size: 40px;
+  letter-spacing: -2px;
+}
+
+.landing .container .text p {
+  font-size: 25px;
+  color: #777;
+}
+
+.landing .container img {
+  width: 600px;
+  position: relative;
+  animation-name: updown;
+  animation-duration: 5s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+@keyframes updown {
+  0%,
+  100% {
+    top: 0;
+  }
+  50% {
+    top: 40px;
+  }
+}
+
+.landing .arrow {
+  position: absolute;
+  bottom: -220px;
+  color: var(--main-color);
+  font-size: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 100px;
+}
+
+/* End Landing */
